@@ -23,7 +23,7 @@ public class ReverseProxyServer extends AbstractVerticle {
 
             final String host = "google.com";
 
-            HttpClient client = vertx.createHttpClient(new HttpClientOptions().setDefaultHost("google.com").setDefaultPort(80).);
+            HttpClient client = vertx.createHttpClient(new HttpClientOptions().setDefaultHost("google.com").setDefaultPort(80));
 
             HttpClientRequest clientRequest = client.request(serverRequest.method(), serverRequest.uri());
             clientRequest.headers().addAll(serverRequest.headers().set("Host", host));
